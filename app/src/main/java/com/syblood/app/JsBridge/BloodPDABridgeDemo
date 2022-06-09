@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+
+    //接收扫描数据（全局）
+    function returnBarCode(barCode) {
+        document.getElementById("test").value = barCode;
+    }
+
+    //接收缓存返回数据（全局）
+	function returnCache(key,value,callBack)
+	{
+		document.getElementById("test").value = value;
+	}
+	//设置缓存
+	function set()
+	{
+	    //key:缓存Key   value:缓存值
+		javascript:ADJS.setLocCache("test","11");
+	}
+	//获取缓存
+    function get()
+	{
+	    //参数  key:缓存Key   callbackFlag:回调标识
+		javascript:ADJS.getLocCache("test","callbackFlag");
+		document.getElementById("test").value = ccc;
+
+	}
+    </script>
+</head>
+<body>
+        <input type="text" id="test"></input>
+
+	<button id="btnSet" onclick="set()">设置缓存</button>
+
+	<button id="btnGet" onclick="get()">获取缓存</button>
+</body>
+</html>
